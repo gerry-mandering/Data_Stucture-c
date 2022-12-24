@@ -6,7 +6,7 @@
 /*   By: minseok2 <minseok2@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 15:43:44 by minseok2          #+#    #+#             */
-/*   Updated: 2022/11/13 16:01:47 by minseok2         ###   ########.fr       */
+/*   Updated: 2022/12/24 13:02:09 by minseok2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,24 @@ int	is_empty(t_list *list)
 		return (0);
 }
 
-int	get_first(t_list *list)
+void	*peek_front(t_list *list)
 {
 	t_node	*first_node;
 
 	if (is_empty(list))
 		ft_exit("list is empty", STDERR_FILENO, EXIT_FAILURE);
 	first_node = list->head->next;
-	return (first_node->data);
+	return (first_node->content);
 }
 
-int	get_last(t_list *list)
+void	*peek_back(t_list *list)
 {
 	t_node	*last_node;
 
 	if (is_empty(list))
 		ft_exit("list is empty", STDERR_FILENO, EXIT_FAILURE);
 	last_node = list->tail->prev;
-	return (last_node->data);
+	return (last_node->content);
 }
 
 void	init_list(t_list *list)
