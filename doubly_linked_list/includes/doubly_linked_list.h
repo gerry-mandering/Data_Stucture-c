@@ -6,7 +6,7 @@
 /*   By: minseok2 <minseok2@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 15:38:14 by minseok2          #+#    #+#             */
-/*   Updated: 2022/12/24 13:01:58 by minseok2         ###   ########.fr       */
+/*   Updated: 2022/12/25 15:23:45 by minseok2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,24 @@ typedef struct s_list
 	t_node	*tail;
 }	t_list;
 
+// list_utils.c
+void	lst_init(t_list *list);
 t_node	*new_node(void *content);
-void	lst_prepend(t_list *list, t_node *new_node);
-void	lst_append(t_list *list, t_node *new_node);
-void	lst_delete(t_list *list, t_node *node);
-void	lst_delete_head(t_list *list);
-void	lst_delete_tail(t_list *list);
 int		lst_isempty(t_list *list);
 int		lst_size(t_list *list);
-void	*lst_peek_front(t_list *list);
-void	*lst_peek_back(t_list *list);
-void	lst_init(t_list *list);
-void	lst_clear(t_list *list);
+
+// list_add.c
+void	lst_prepend(t_list *list, t_node *new_node);
+void	lst_append(t_list *list, t_node *new_node);
+
+// list_peek.c
+void	*lst_peek_first(t_list *list);
+void	*lst_peek_last(t_list *list);
+
+// list_delete.c
+void	lst_delete(t_node *node, void (*del)(void *));
+void	lst_delete_first(t_list *list, void (*del)(void *));
+void	lst_delete_last(t_list *list, void (*del)(void *));
+void	lst_clear(t_list *list, void (*del)(void *));
 
 #endif

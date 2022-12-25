@@ -6,11 +6,11 @@
 #    By: minseok2 <minseok2@student.42seoul.kr      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/13 15:36:02 by minseok2          #+#    #+#              #
-#    Updated: 2022/12/05 14:55:33 by minseok2         ###   ########.fr        #
+#    Updated: 2022/12/25 15:26:46 by minseok2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = dll.a
+NAME = libdll.a
 
 CC = CC
 CFLAGS = -Wall -Wextra -Werror
@@ -25,9 +25,10 @@ LIBFT_NAME = ft
 HEADER_DIR = includes
 
 SRCS_DIR = src
-SRCS = list_basic.c \
-	   list_push_pop.c \
-	   list_clear.c
+SRCS = list_add.c \
+	   list_delete.c \
+	   list_peek.c \
+	   list_basic.c
 
 OBJS_DIR = objs
 OBJS = $(SRCS:%.c=$(OBJS_DIR)/%.o)

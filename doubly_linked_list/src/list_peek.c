@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_clear.c                                       :+:      :+:    :+:   */
+/*   list_peek.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minseok2 <minseok2@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/13 15:45:20 by minseok2          #+#    #+#             */
-/*   Updated: 2022/11/13 15:45:34 by minseok2         ###   ########.fr       */
+/*   Created: 2022/12/25 15:04:29 by minseok2          #+#    #+#             */
+/*   Updated: 2022/12/25 15:18:10 by minseok2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/doubly_linked_list.h"
 
-void	clear_list(t_list *list)
+void	*lst_peek_first(t_list *list)
 {
-	t_node	*current_node;
-	t_node	*next_node;
+	return (list->head->next->content);
+}
 
-	current_node = list->head->next;
-	while (current_node->next != NULL)
-	{
-		next_node = current_node->next;
-		ft_free(current_node);
-		current_node = next_node;
-	}
-	ft_free(list->head);
-	ft_free(list->tail);
+void	*lst_peek_last(t_list *list)
+{
+	return (list->tail->prev->content);
 }
