@@ -6,7 +6,7 @@
 #    By: minseok2 <minseok2@student.42seoul.kr      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/13 15:36:02 by minseok2          #+#    #+#              #
-#    Updated: 2022/12/25 15:26:46 by minseok2         ###   ########.fr        #
+#    Updated: 2023/02/10 15:19:29 by minseok2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ LIBFT_NAME = ft
 
 HEADER_DIR = includes
 
-SRCS_DIR = src
+SRCS_DIR = srcs
 SRCS = list_add.c \
 	   list_delete.c \
 	   list_peek.c \

@@ -6,7 +6,7 @@
 /*   By: minseok2 <minseok2@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 15:38:14 by minseok2          #+#    #+#             */
-/*   Updated: 2022/12/25 15:23:45 by minseok2         ###   ########.fr       */
+/*   Updated: 2023/02/10 15:18:36 by minseok2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,10 @@ void	lst_prepend(t_list *list, t_node *new_node);
 void	lst_append(t_list *list, t_node *new_node);
 
 // list_peek.c
-void	*lst_peek_first(t_list *list);
-void	*lst_peek_last(t_list *list);
+t_node	*lst_peek_first_node(t_list *list);
+t_node	*lst_peek_last_node(t_list *list);
+void	*list_peek_first_content(t_list *list);
+void	*list_peek_last_content(t_list *list);
 
 // list_delete.c
 void	lst_delete(t_node *node, void (*del)(void *));
